@@ -1,0 +1,53 @@
+
+ASSIGNMENT 1
+____________________________
+submitted by : RISHI MITTAL
+	       201305543
+___________________________
+
+1. 
+a.  chmod 647 1a.txt 
+b.  chmod 140 1b.txt
+c.  chmod 440 1c.txt 
+d.  chmod 000 1d.txt
+
+2. sudo groupadd Group1
+    sudo useradd -G Group1 user1
+
+a. vim 2.txt
+b. chmod 400 2.txt 
+c. sudo chown user1 2.txt
+d. vim 2.txt (permission denied)
+
+3. ssh rishi.mittal@web.iiit.ac.in
+
+a. vim 3.txt
+b. exit
+c. scp rishi.mittal@web.iiit.ac.in:~/3.txt .
+d. vim 3.txt ,  scp  3.txt rishi.mittal@web.iiit.ac.in:~/ 
+
+4. vim 4.txt
+   echo "I am Awesome" >> 4.txt   
+
+5. vim 5a.txt
+   cat 5a.txt 1> 5o.txt | cat 5b.txt 2> 5e.txt
+
+6. awk '/^7$/,/^15$/' 6a.txt > 6b.txt
+
+7. awk '/^1$/,/^10$/' 6a.txt > X.txt | awk '/^11$/,/^20$/' 6a.txt >Y.txt
+
+8. sort -rn 6a.txt > 8.txt
+
+9. du -s --time * | sort  -rn | head -n 5 > 9.txt
+
+10.ls | tee 10.txt 
+
+11.tr '[:lower:]' '[:upper:]' < 9.txt >10.txt
+
+12.find / "*passwd*"
+
+13. tar -cvf my_tar.tar *
+   
+
+  
+ 

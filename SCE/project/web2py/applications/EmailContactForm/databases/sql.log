@@ -1,0 +1,9 @@
+timestamp: 2013-11-09T11:40:24.079595
+CREATE TABLE message(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    your_name CHAR(512),
+    your_email CHAR(512),
+    your_message TEXT,
+    timestamp CHAR(512)
+);
+success!

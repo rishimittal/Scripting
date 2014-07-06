@@ -1,0 +1,83 @@
+timestamp: 2013-11-10T19:21:41.433099
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512),
+    student_id CHAR(512),
+    ips TEXT
+);
+success!
+timestamp: 2013-11-10T19:21:41.603415
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2013-11-10T19:21:41.749346
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-11-10T19:21:41.884260
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2013-11-10T19:21:42.019093
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2013-11-10T19:21:42.176117
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2013-11-10T19:21:42.369373
+CREATE TABLE quiz(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    owner INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    code CHAR(512),
+    title CHAR(512),
+    body TEXT,
+    retake CHAR(1),
+    time_restricted CHAR(1),
+    start_time TIMESTAMP,
+    stop_time TIMESTAMP,
+    duration INTEGER
+);
+success!
+timestamp: 2013-11-10T19:21:42.514757
+CREATE TABLE report(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    student INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    quiz INTEGER REFERENCES quiz (id) ON DELETE CASCADE,
+    grade CHAR(512),
+    form CHAR(512),
+    answers TEXT,
+    start_time TIMESTAMP,
+    stop_time TIMESTAMP
+);
+success!

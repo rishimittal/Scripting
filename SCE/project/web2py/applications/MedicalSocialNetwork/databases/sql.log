@@ -1,0 +1,185 @@
+timestamp: 2013-11-08T23:45:57.301159
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(512),
+    last_name CHAR(512),
+    email CHAR(512),
+    password CHAR(512),
+    sex CHAR(512),
+    birth_place CHAR(512),
+    birth_date DATE,
+    patient CHAR(1),
+    doctor CHAR(1),
+    nurse CHAR(1),
+    administrator CHAR(1),
+    trusted_doctors CHAR(512),
+    trusted_others CHAR(512),
+    registration_key CHAR(512),
+    registration_id CHAR(512),
+    reset_password_key CHAR(512)
+);
+success!
+timestamp: 2013-11-08T23:45:57.474179
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2013-11-08T23:45:57.619751
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-11-08T23:45:57.779113
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2013-11-08T23:45:57.913993
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2013-11-08T23:45:58.082294
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2013-11-08T23:45:58.252225
+CREATE TABLE contact(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    patient INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    full_name CHAR(512),
+    active_since DATE,
+    active_until DATE,
+    relation CHAR(512),
+    home_hone CHAR(512),
+    cell_hone CHAR(512),
+    address CHAR(512),
+    zip_code CHAR(512),
+    state CHAR(512),
+    country CHAR(512),
+    info TEXT
+);
+success!
+timestamp: 2013-11-08T23:45:58.418992
+CREATE TABLE insuarance(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    patient INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    full_name CHAR(512),
+    active_since DATE,
+    active_until DATE,
+    insurance_name CHAR(512),
+    plan_type CHAR(512),
+    plan_code CHAR(512),
+    insured_code CHAR(512),
+    info TEXT
+);
+success!
+timestamp: 2013-11-08T23:45:58.588116
+CREATE TABLE post(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    patient INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    category CHAR(512),
+    title CHAR(512),
+    comment TEXT,
+    importance CHAR(512),
+    probability CHAR(512),
+    posted_on TIMESTAMP,
+    posted_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    expired CHAR(1),
+    expires_on TIMESTAMP,
+    expired_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    reasons CHAR(512)
+);
+success!
+timestamp: 2013-11-08T23:45:58.761733
+CREATE TABLE plugin_wiki_page(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    slug CHAR(512),
+    title CHAR(512),
+    active CHAR(1),
+    public CHAR(1),
+    body TEXT,
+    role INTEGER REFERENCES auth_group (id) ON DELETE CASCADE,
+    changelog CHAR(512),
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP
+);
+success!
+timestamp: 2013-11-08T23:45:58.914532
+CREATE TABLE plugin_wiki_page_archive(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    current_record INTEGER REFERENCES plugin_wiki_page (id) ON DELETE CASCADE,
+    slug CHAR(512),
+    title CHAR(512),
+    active CHAR(1),
+    public CHAR(1),
+    body TEXT,
+    role INTEGER REFERENCES auth_group (id) ON DELETE CASCADE,
+    changelog CHAR(512),
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP
+);
+success!
+timestamp: 2013-11-08T23:45:59.071780
+CREATE TABLE plugin_wiki_attachment(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    tablename CHAR(512),
+    record_id INTEGER,
+    name CHAR(512),
+    file CHAR(512),
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP
+);
+success!
+timestamp: 2013-11-08T23:45:59.239814
+CREATE TABLE plugin_wiki_comment(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    tablename CHAR(512),
+    record_id INTEGER,
+    body CHAR(512),
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on TIMESTAMP
+);
+success!
+timestamp: 2013-11-08T23:45:59.397099
+CREATE TABLE plugin_wiki_tag(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    links INTEGER,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on TIMESTAMP
+);
+success!
+timestamp: 2013-11-08T23:45:59.554199
+CREATE TABLE plugin_wiki_link(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    tag INTEGER REFERENCES plugin_wiki_tag (id) ON DELETE CASCADE,
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!

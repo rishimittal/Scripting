@@ -1,0 +1,45 @@
+
+NAME : RISHI MITTAL
+ROLL NO : 201305543
+
+
+
+Q1. cat 1.txt | grep -i "^\([a-zA-Z0-9]\)\([a-zA-Z0-9\*]\+\)[\@]\([a-zA-Z0-9]\+\)\(\.\)\(com\|org\|edu\|ac\.in\)" 
+
+Q2. 
+a. cat 2.txt | grep "^\([0-9]\{1,3\}\)\(\.\)\([0-9]\{1,3\}\)\(\.\)\([0-9]\{1,3\}\)\(\.\)\([0-9]\{1,3\}\)"
+
+b. 
+
+Q4. cat 4.txt | grep -i  "^\(\(<\)\(h[1-6]\)\)\(>\)\(.*\)\(\(\3\)\(>\)\)$"
+
+Q5.
+a. cat 5.txt | grep  "^\(//\|\#\|'\)"
+
+b. cat 5.txt | grep -v "^\(//\|\#\|'\)" 
+
+Q6.  cat 6.txt | grep  "^\([A-Z]\)\([A-Z]\)\( \)\([0-9]\)\([0-9]\)\( \)\([A-Z]\{1,2\}\)\( \)\([0-9]\)\([0-9]\?\)\([0-9]\?\)\([0-9]\?\)$"
+
+Q7. 
+
+Q8. grep * | find  -type f -amin -600
+
+Q9. 
+a. awk '{print}' 9.txt | sed -i '1,3 d' 9.txt
+
+b. sed -n '/an/p' 10.txt | awk -F, '{print}'
+
+c. sed -n 'p' 11.txt | awk 'match ($0 , /^\/\*.*\*\/$/){print}'
+
+10. cat 12.txt | grep '^[0-9]\+[.]\?[0-9]\+\?$'
+
+11.
+
+12.
+a.  cat employee.txt | awk 'BEGIN {print "\t--------------------\n\tInventory Report\n\t-------------------\n1\tName\tRate\tHours\tNet_Pay"} NR==2,NR==7 {printf"%s\t%s\t%s\t%s\t%s\n",NR,$1,$2,$3,$2*$3}END{print"\t----------------------\n\tReporting Done...!\n\t--------------------"}'
+
+b. cat employee.txt | awk 'BEGIN{max=0;maxE="";min;minE=""}{if($2*$3>max){max=$2*$3;maxE=$1}min=$2*$3;if($2*$3 <=min){min=$2*$3;minE=$1}}END{print "MAX:"maxE" Value:"max"\nMIN:"minE" Value:"min}' 
+
+c. cat employee.txt | awk 'BEGIN{print "NAME\tHOURS\tNET_PAY"} NR==2,NR==7{if($3 > 10) print $1"\t"$3"\t"$2*$3*1.1}'
+ 
+  

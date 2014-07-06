@@ -1,0 +1,24 @@
+total 76
+-rw-rw-r-- 1 rishimittal rishimittal    0 Sep  6 09:05 add1.sh
+-rw-rw-r-- 1 rishimittal rishimittal  452 Sep  6 01:16 cal.sh
+-rw-rw-r-- 1 rishimittal rishimittal   55 Sep  5 21:00 for.sh
+-rw-rw-r-- 1 rishimittal rishimittal  129 Sep  5 21:10 fun1.sh
+-rw-rw-r-- 1 rishimittal rishimittal   91 Sep  5 18:47 hello.sh
+-rw-rw-r-- 1 rishimittal rishimittal  164 Sep  6 01:29 l3q5.sh
+-rw-rw-r-- 1 rishimittal rishimittal 1271 Sep  6 09:27 lsl.txt
+-rw-rw-r-- 1 rishimittal rishimittal   75 Sep  5 19:18 m_input.sh
+-rw-rw-r-- 1 rishimittal rishimittal    0 Sep  6 10:14 n1.txt
+-rw-rw-r-- 1 rishimittal rishimittal  312 Sep  6 00:58 nth_prime.sh
+-rw-rw-r-- 1 rishimittal rishimittal    0 Sep  6 09:38 ope.txt
+-rw-rw-r-- 1 rishimittal rishimittal    0 Sep  6 09:09 op.txt
+-rw-rw-r-- 1 rishimittal rishimittal  466 Sep  6 09:13 out.txt
+-rw-rw-r-- 1 rishimittal rishimittal  114 Sep  6 09:14 pl.txt
+-rw-rw-r-- 1 rishimittal rishimittal    9 Sep  6 09:07 p.txt
+-rw-rw-r-- 1 rishimittal rishimittal   79 Sep  5 19:11 readP.sh
+-rw-rw-r-- 1 rishimittal rishimittal  234 Sep  6 01:45 recu_fact.sh
+-rw-rw-r-- 1 rishimittal rishimittal   13 Sep  6 02:00 recur_fib.sh
+-rw-rw-r-- 1 rishimittal rishimittal  174 Sep  6 02:08 sum_digit.sh
+-rw-rw-r-- 1 rishimittal rishimittal   95 Sep  6 00:01 table.sh
+-rw-rw-r-- 1 rishimittal rishimittal   69 Sep  5 20:57 unitl.sh
+-rw-rw-r-- 1 rishimittal rishimittal   74 Sep  5 20:53 while.sh
+-rw-rw-r-- 1 rishimittal rishimittal  183 Sep  6 09:28 who.txt

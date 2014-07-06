@@ -1,0 +1,2 @@
+ls: cannot access pi.txt: No such file or directory
+-rw-rw-r-- 1 rishimittal rishimittal 74 Sep  5 20:53 while.sh

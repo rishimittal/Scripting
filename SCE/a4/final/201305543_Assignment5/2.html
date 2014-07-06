@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <title>2</title>
+		<link rel="stylesheet" type="text/css" href="2.css" >
+		<script>
+			function getDetails(){
+				
+				var title = document.my_form.tbx.value;
+				var note = document.my_form.ta.value;
+				var dat = new Date();
+				var gmtDate = dat.toGMTString();
+				var d1 = document.getElementById("output");	
+				d1.insertAdjacentHTML('afterend','<br/><div id="note"><br/><div id="title">'+title+'</div><br />'+gmtDate+'<br /><br />'+note+'</div>');
+			}
+		</script>
+	</head>
+        <body><div id="main_layout">
+		<div id="heading">N<span style="font-size:30px;">OTES</span></div><br />
+               <form name="my_form" method="POST">
+		<div id="nt">
+		<table>
+			<tr>
+				<td><br />Title</td>
+				<td><br /><input name="tbx" type="text"> </td>
+			</tr>
+			<tr>
+				<td>Note</td>
+				<td><textarea name="ta" rows="4" cols="50"></textarea></td>
+			</tr>
+			<tr>	
+				<td></td>
+				<td><input type="button" value="Submit" onclick="getDetails(this);"/></td>
+			</tr>
+		</table>
+		</div>
+		</form>
+		<div id="output"></div>
+		<br /><br />
+	</div>
+        </body>
+</html>
+

@@ -1,0 +1,51 @@
+
+
+NAME : RISHI MITTAL
+ROLL NO : 201305543
+
+
+1. Cat the file , pipe the o/p of the cat , top grep the pattern with -i option to ignore case senxititvity, regex to used as pattern to match email ids in 1.txt , starts wth alwaysa character/ number and uses only the extensons as com ,edu, org, ac.in.
+
+2.
+ a. Matches the IP address of the format W.X.Y.Z where wach of then W, X Y,Z shouls be a number of 1 to 3 digits , hence [0-9]{1,3} followed by . used with \ to revoke its usual behaviour.
+
+ b. Matches IP address of the form X.X.X.X where in first bracked ,[0-9]{1,3 } is used for other numbers , where \1 is used to refer it to the outermost brackket hence repeating the similar number in 2nd and 3rd place , and .\2 matched the inner bracket which matches the only the number.
+
+ c.Matched the number in the range 0- 255 , we break tht regex into the 0-9 ,10-199,200-249,250-255 and repeat ths one three times and end wth the first like number check.  
+
+3. 
+ a. Matches the first and last chaacter , let frst char defined as one of the a-z,A-Z,0-9 follwed by nay number with zero or more occureences(.*) ,then we back reference it to first character for last char to match first one.
+
+ b.  Matches the second and second last chaacter , let second char defined as one of the a-z,A-Z,0-9 follwed by nay number with zero or more occureences(.*) ,then we back reference it to second character for second last char to match second one , it is preceded by any one of the char.
+
+4. In 4.txt , the character matching the html tags ,starts with < then next h[1-6] should be matched with ending of the header name , there we use the back references to match them , inter mediate could be any character string. Ending tag should be of format </h> only header should be same.
+
+5. 
+a. Using filter the lines with the begininig of the #,//,and ' as a comment.
+
+b. Same as above bu tin revers now use the -v option n grep which displays the lines not matching the patten files.
+
+6. Step by step processing of the string line by line by like [A-Z][A-Z] then by space \( \) followed  by the number of 2 digits , then space again the character once/twice occurence , then any number of 1,2,3,4 length then [0-9] and other [0-9] with the ? that is zero or one occurence of the character.
+
+7. Uses the sed with -n option , that supercedes the behaviour of the p , the it replaces the regex like /([a-z])\1*/ which uses the \1 * means more than one similar occurence and replace it with the \1 which is matched , used the s/<old_regex>/<new_regex>/p format to find and replace.
+
+8. Select the the long list of the files with find the last modified in 10 hours -mmin -600 , pipe the output to the to grep and filter them for the not begining with the d .
+
+9.
+a.  using both awk and sed , first read the file and then using sed with -i option delete the first 3 lines using d.
+
+b. Using both sed and awk , first outputs the lines with the an pattern in the file with an and then output to the pipe , awk ouput every line by line.
+
+c. Replace using the sed by finding the regex and replaceing with the blank.
+
+10. cat the file and grep the file line by line for , the pattern mentioned in the regex , i.e any number from 0-9[one or more occurence] followed by . and then any number of any length .
+
+11. 
+
+12. 
+a. using BEGIN and END to print message as header and footer , as they are not included in the processing.
+
+b. check for the payment as in NET PAY and compare it for maximum or minimum.
+
+c. print out the appraisal amount , chek for no' of hours > 10 and for those employees add the 10 % more to the Netpay else  do not print.   
+

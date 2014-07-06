@@ -1,0 +1,113 @@
+
+
+body{
+	background-color:#C0C0C0;
+}
+
+#valid-img p{
+	margin:auto;	
+	padding-left:215px;
+}
+
+#content{
+	height:600px;
+	width:900px;
+	background-color:#FFFFFF;
+	border:2px solid #707070;
+	margin:auto;
+}
+
+#heading{
+	font-weight:bold;
+	font-size:25px;
+	padding-left:25px;
+	font-family:"Times New Roman";
+}
+
+#sub-heading{
+	padding-left:25px;
+	font-size:15px;
+	font-family:"Times New Roman";
+	color:#909090;	
+}
+
+#nav{
+	padding-left:300px;
+}
+#nav ul{
+	margin: 10px 0;
+	padding: 0px;
+	list-style-type:none;
+}
+
+#nav ul li {
+	display: inline-block;
+	float:left;
+	line-height:25px;
+}
+
+#nav li + li{
+	background:url('ImagesQ4/divider.jpg');	
+	height:30px;
+	background-repeat:repeat-y;
+}
+
+#nav ul li a{
+	color:#500000;
+	text-decoration: none;
+	padding: 1em 1em;	
+	font-size:15px;	
+}
+
+#nav ul li a:hover{
+	color:#FFFFFF;
+	background-color:#500000;
+}
+
+#tab{
+	width:900px;
+}
+
+#tab tr.thead{
+	color:#500000;
+	font-size:15px;
+	padding-left:20px;
+}
+#tab{
+	padding-left:30px;
+}
+
+#tab tr.tbody td.left a{
+        font-size:12px;
+}
+
+#tab tr.tbody td.left{
+	border-bottom: 1px dashed #999;
+	left:10px;
+}
+
+#tab tr.tbody td.right{
+        border-bottom: 1px dashed #999;
+        left:10px;
+}
+
+#tab tr td.left{
+	width:270px;
+}
+
+#tab tr.tbody td.right{
+        font-size:10px;
+}
+
+#foot{
+	text-align:center;
+	color:#C80000;
+	font-size:12px;
+}
+.stext{
+	font-size:10px;
+
+}
+.stext a{
+	color:#FF9900;
+}

@@ -1,0 +1,36 @@
+timestamp: 2013-11-09T11:40:34.749482
+CREATE TABLE line(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512)
+);
+success!
+timestamp: 2013-11-09T11:40:34.909844
+CREATE TABLE station(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512)
+);
+success!
+timestamp: 2013-11-09T11:40:35.056231
+CREATE TABLE departure(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    line INTEGER REFERENCES line (id) ON DELETE CASCADE,
+    number INTEGER,
+    station INTEGER REFERENCES station (id) ON DELETE CASCADE,
+    time INTEGER,
+    weekday CHAR(1),
+    saturday CHAR(1),
+    sunday CHAR(1)
+);
+success!
+timestamp: 2013-11-09T11:40:35.202169
+CREATE TABLE arrival(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    line INTEGER REFERENCES line (id) ON DELETE CASCADE,
+    number INTEGER,
+    station INTEGER REFERENCES station (id) ON DELETE CASCADE,
+    time INTEGER,
+    weekday CHAR(1),
+    saturday CHAR(1),
+    sunday CHAR(1)
+);
+success!

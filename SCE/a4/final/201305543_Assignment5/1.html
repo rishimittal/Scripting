@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>1</title>
+		<style>	
+			#myCanvas{
+				margin:auto;
+			}
+
+		</style>	
+	</head>
+	<body>	<div id="pl">	
+		<canvas id="myCanvas" width="750" height="550">No support</canvas>
+		</div>
+	<script>
+		var c=document.getElementById("myCanvas");
+		var ctx=c.getContext("2d");
+		ctx.save();
+		
+		ctx.font='normal 40px Arial';
+		ctx.fillStyle="red";
+		ctx.shadowColor = "black";
+		ctx.shadowOffsetX = 5;
+		ctx.shadowOffsetY = 5;
+		ctx.shadowBlur = 4;
+		ctx.fillText("HTML 5",220,160);
+		ctx.restore();
+		
+		ctx.font='italic 30px courier';
+		ctx.fillText("This is in italic",120,210);
+		
+		ctx.restore();
+		ctx.font='bold 30px courier';
+		ctx.fillText("This is in bold",120,260);
+		
+		ctx.restore();
+		ctx.font='italic bold 30px courier';
+		ctx.fillText("This is in bold and italic",120,310);
+		ctx.font='italic bold 30px courier';
+		ctx.fillStyle="green";
+		ctx.fillText("This is in green",120,360);
+		
+		ctx.restore();
+		ctx.font='italic bold 30px courier';
+		ctx.fillStyle="purple";
+		ctx.fillText("This is in purple",120,410);
+		
+		ctx.restore();
+		ctx.font='normal 25px serif';
+		ctx.fillStyle='orange';
+		ctx.fillText("Canvas",500,470);
+		
+		ctx.restore();
+			
+		ctx.rect(45,80,560,400);
+		ctx.stroke();
+	
+		ctx.restore();
+		ctx.rotate(330*Math.PI/180);
+		ctx.fillStyle='#00FFFF';
+		ctx.fillRect(0,90,150,40);
+		ctx.strokeStyle="black";
+		ctx.lineWidth = 2;
+		ctx.strokeRect(0,90,150,40);
+	
+		ctx.font='normal 11px serif'
+		ctx.fillStyle='black';
+		ctx.fillText("Scripting and Computing",1,105);
+		
+		ctx.fillText("enviornments",1,120);
+	
+	</script>
+	</body>
+</html>
